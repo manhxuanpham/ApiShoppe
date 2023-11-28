@@ -9,9 +9,9 @@ namespace DAL
 {
     public partial interface ISanPhamRepository
     {
-        DanhMuc GetChiTietSanPham(string ma);
-        bool createsanpham(DanhMuc sanPham);
-        bool updatesanpham(DanhMuc sanPham);
+        SanPham GetChiTietSanPham(string ma);
+        bool createsanpham(SanPham sanPham);
+        bool updatesanpham(SanPham sanPham);
         bool deletesanpham(string masp);
     }
 }

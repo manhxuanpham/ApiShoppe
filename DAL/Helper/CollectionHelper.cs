@@ -141,7 +141,7 @@ namespace DAL
                 obj = Activator.CreateInstance<T>();
                 foreach (DataColumn column in row.Table.Columns)
                 {
-                    PropertyInfo prop = obj.GetType().GetProperty(column.ColumnName);
+                    PropertyInfo prop = obj.GetType().GetProperty(column.ColumnName) ;
                     if (prop == null) continue;
                     Type type = prop.PropertyType;
                     try

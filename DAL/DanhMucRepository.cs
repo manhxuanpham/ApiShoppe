@@ -22,9 +22,9 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "createDanhMuc",
-                "@MaDM", danhMuc.maDM,
-                "@tenDM", danhMuc.tenDM,
-                "@noidung", danhMuc.noiDung);
+                "@MaDM", danhMuc.MaDM,
+                "@tenDM", danhMuc.TenDM,
+                "@noidung", danhMuc.NoiDung);
 
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -65,13 +65,11 @@ namespace DAL
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "getDanhMucById",
+                var result = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getDanhMucById",
                 "@MaDM", maDM);
 
-                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
-                {
-                    throw new Exception(Convert.ToString(result) + msgError);
-                }
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
                 return result.ConvertTo<DanhMuc>().FirstOrDefault();
 
             }
@@ -88,9 +86,9 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "updateDanhMuc",
-                "@MaDM", danhMuc.maDM,
-                "@tenDM", danhMuc.tenDM,
-                "@noidung", danhMuc.noiDung);
+                "@MaDM", danhMuc.MaDM,
+                "@tenDM", danhMuc.MaDM,
+                "@noidung", danhMuc.NoiDung);
 
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {

@@ -11,17 +11,17 @@ namespace BUS
         {
             _res = res;
         }
-        public DanhMuc GetChiTetSanPham(string id)
+        public SanPham GetChiTetSanPham(string id)
         {
             return _res.GetChiTietSanPham(id);
         }     
 
-        public bool creatSanPham(DanhMuc sanPham)
+        public bool creatSanPham(SanPham sanPham)
         {
             return _res.createsanpham(sanPham);
         }
 
-        public bool updateSanPham(DanhMuc sanPham)
+        public bool updateSanPham(SanPham sanPham)
         {
             return _res.updatesanpham(sanPham);
 

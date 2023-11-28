@@ -1,16 +1,18 @@
 ﻿namespace DTO
 {
-    public class DanhMuc
+    public class SanPham
     {
-        public string maSanPham { get; set; }
+       
 
-        public string tenSanPham { get; set; }
-        public int soLuong { get; set; }
-        public float donGia { get; set; }
-        public string moTa { get; set; }
-        public string maDM { get; set; }
-        public string hinhAnh { get; set; }
-        public string maNCC { get; set; }
+        public string MaSP { get; set; }
+
+        public string TenSP { get; set; }
+        public int SoLuong { get; set; }
+        public float DonGia { get; set; }
+        public string MoTa { get; set; }
+        public string MaDM { get; set; }
+        public string HinhAnh { get; set; }
+        public string MaNCC { get; set; }
         
 
 

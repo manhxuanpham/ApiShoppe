@@ -9,9 +9,9 @@ namespace BUS.Interface
 {
     public interface ISanPham_BUS
     {
-        DanhMuc GetChiTetSanPham(string id);
-        bool creatSanPham(DanhMuc sanPham);
-        bool updateSanPham(DanhMuc sanPham);
+        SanPham GetChiTetSanPham(string id);
+        bool creatSanPham(SanPham sanPham);
+        bool updateSanPham(SanPham sanPham);
         bool deleteSanPham(string masp);
     }
 }

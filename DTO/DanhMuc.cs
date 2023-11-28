@@ -8,10 +8,8 @@ namespace DTO
 {
     public class DanhMuc
     {
-        public string maDM { get; set; }
-        public string tenDM { get; set; }
-        public string noiDung { get; set; }
-
-
+        public string MaDM { get; set; }
+        public string TenDM { get; set; }
+        public string NoiDung { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace DAL
         {
             this._dbHelper = dbhelper;
         }
-        public DanhMuc GetChiTietSanPham(string masp)
+        public SanPham GetChiTietSanPham(string masp)
         {
             string msgError = "";
             try
@@ -18,30 +18,30 @@ namespace DAL
                      "@MaSP", masp);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                return dt.ConvertTo<DanhMuc>().FirstOrDefault();
+                return dt.ConvertTo<SanPham>().FirstOrDefault();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }  
-        
+        }
 
+  
 
-        public bool createsanpham(DanhMuc sanPham)
+        public bool createsanpham(SanPham sanPham)
         {
             string msgError = "";
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "ThemSanPham",
-                "@MaSp", sanPham.maSanPham,
-                "@TenSP", sanPham.tenSanPham,
-                "@SoLuong", sanPham.soLuong,
-                "@DonGia", sanPham.donGia,
-                "@MoTa", sanPham.moTa,
-                "@MaDM", sanPham.maDM,
-                "@HinhAnh", sanPham.hinhAnh,
-                "@MaNCC", sanPham.maNCC);
+                "@MaSp", sanPham.MaSP,
+                "@TenSP", sanPham.TenSP,
+                "@SoLuong", sanPham.SoLuong,
+                "@DonGia", sanPham.DonGia,
+                "@MoTa", sanPham.MoTa,
+                "@MaDM", sanPham.MaDM,
+                "@HinhAnh", sanPham.HinhAnh,
+                "@MaNCC", sanPham.MaNCC);
 
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -58,20 +58,20 @@ namespace DAL
 
 
 
-        public bool updatesanpham(DanhMuc sanPham)
+        public bool updatesanpham(SanPham sanPham)
         {
             string msgError = "";
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "CapNhatThongTinSanPham",
-                "@MaSP", sanPham.maSanPham,
-                "@TenSP", sanPham.tenSanPham,
-                 "@SoLuong", sanPham.soLuong,
-                 "@DonGia", sanPham.donGia,
-                 "@MoTa", sanPham.moTa,
-                 "@MaDM", sanPham.maDM,
-                 "@HinhAnh", sanPham.hinhAnh,
-                "@MaNCC", sanPham.maNCC);
+                "@MaSP", sanPham.MaSP,
+                "@TenSP", sanPham.TenSP,
+                 "@SoLuong", sanPham.SoLuong,
+                 "@DonGia", sanPham.DonGia,
+                 "@MoTa", sanPham.MoTa,
+                 "@MaDM", sanPham.MaDM,
+                 "@HinhAnh", sanPham.HinhAnh,
+                "@MaNCC", sanPham.MaNCC);
 
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -106,5 +106,7 @@ namespace DAL
                 throw ex;
             }
         }
+
+        
     }
 }
