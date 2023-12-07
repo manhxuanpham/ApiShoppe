@@ -13,5 +13,7 @@ namespace DAL
         bool createsanpham(SanPham sanPham);
         bool updatesanpham(SanPham sanPham);
         bool deletesanpham(string masp);
+        public List<SanPham> GetProductPage(int pageIndex, int pageSize);
+        public List<SanPham> filterProduct()
     }
 }

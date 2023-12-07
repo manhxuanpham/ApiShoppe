@@ -32,6 +32,10 @@ namespace BUS
             return _res.deletesanpham(masp);
 
         }
+        public List<SanPham> GetProductPage(int pageNumber,int pageSize )
+        {
+            return _res.GetProductPage(pageNumber,pageSize);
+        }
     }
 }
 

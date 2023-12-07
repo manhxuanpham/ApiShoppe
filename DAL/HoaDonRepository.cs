@@ -91,8 +91,8 @@ namespace DAL
                 "NgayDuyet", hoaDon.NgayDuyet,
                 "@HoTen", hoaDon.HoTen,
                 "@SDT", hoaDon.SDT,
-                "Email", hoaDon.Email,
-                "DiaChi", hoaDon.DiaChi,
+                "@Email", hoaDon.Email,
+                "@DiaChi", hoaDon.DiaChi,
                 "@list_json_chitiethoadon", hoaDon.list_json_chitiethoadon != null ? MessageConvert.SerializeObject(hoaDon.list_json_chitiethoadon) : null);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {

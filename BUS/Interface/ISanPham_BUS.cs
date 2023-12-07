@@ -13,5 +13,6 @@ namespace BUS.Interface
         bool creatSanPham(SanPham sanPham);
         bool updateSanPham(SanPham sanPham);
         bool deleteSanPham(string masp);
+        public List<SanPham> GetProductPage(int pageIndex, int pageSize);
     }
 }

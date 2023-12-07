@@ -27,6 +27,8 @@ namespace DTO
         public float TongTien { get; set; }
         public string MaGiamGia { get; set; }
         public string MaCTHD { get; set; }
+        public int status { get; set; }
+
 
     }
 
